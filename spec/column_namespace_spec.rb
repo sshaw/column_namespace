@@ -45,7 +45,7 @@ RSpec.describe ColumnNamespace do
       expect(product.external_variant_id).to eq 2
       expect(product.external_metafield_id).to eq 1
 
-      # We assign before validation
+      # We assign in a before_validation hook
       product.valid?
 
       expect(product.external.product_id).to eq 111
@@ -106,7 +106,7 @@ RSpec.describe ColumnNamespace do
       expect(product.a).to eq "1"
       expect(product.b).to eq "2"
 
-      # We assign before validation
+      # We assign in before_validation hook
       product.valid?
 
       expect(product.foo.a).to eq "11"
