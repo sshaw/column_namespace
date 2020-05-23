@@ -45,7 +45,7 @@ module ColumnNamespace
     columns = column_names.select { |name| name.starts_with?(prefix) }
     raise "No attributes found with prefix #{prefix}" unless columns.any?
 
-    method = prefix.sub(/[^[:alnum]]*\z/i, "")
+    method = prefix.sub(/[^[:alnum:]]*\z/i, "")
     klass  = method.classify
     prefix_regex = /\A#{Regexp.quote(prefix)}[^[:alnum:]]*/
 
