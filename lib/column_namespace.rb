@@ -42,7 +42,7 @@ module ColumnNamespace
   end
 
   def namespace_via_prefix(prefix)
-    columns = column_names.select { |name| name.starts_with?(prefix) }
+    columns = column_names.select { |name| name.start_with?(prefix) }
     raise "No attributes found with prefix #{prefix}" unless columns.any?
 
     method = prefix.sub(/[^[:alnum:]]*\z/i, "")

@@ -1,4 +1,6 @@
 require "bundler/setup"
+# Required for Active Record < 7 on Ruby 3.4+ where logger is not a default gem
+require "logger"
 require "column_namespace"
 
 RSpec.configure do |config|

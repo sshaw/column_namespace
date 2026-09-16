@@ -118,5 +118,20 @@ RSpec.describe ColumnNamespace do
       expect(product.foo.a).to eq "11"
       expect(product.foo.b).to eq "22"
     end
+
+    it "accepts symbol column names" do
+      instance = Class.new(ActiveRecord::Base) do
+        self.table_name = "products"
+
+        extend ColumnNamespace
+        column_namespace :foo => [:a, :b]
+      end.new
+
+      instance.foo.a = "1"
+      instance.valid?
+
+      expect(instance.foo.a).to eq "1"
+      expect(instance.a).to eq "1"
+    end
   end
 end
