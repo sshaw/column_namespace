@@ -17,7 +17,8 @@ module ColumnNamespace
 
   def namespace_via_list(config)
     config.each do |namespace, columns|
-      unknown = columns.map(&:to_s) - column_names
+      columns = columns.map(&:to_s)
+      unknown = columns - column_names
       raise "unknown column(s): #{unknown.to_sentence}" unless unknown.empty?
 
       klass = namespace.to_s.classify

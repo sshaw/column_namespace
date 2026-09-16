@@ -1,6 +1,6 @@
 # Column Namespace
 
-[![Build Status](https://travis-ci.org/sshaw/column_namespace.svg?branch=master)](https://travis-ci.org/sshaw/column_namespace)
+[![CI](https://github.com/sshaw/column_namespace/actions/workflows/ci.yml/badge.svg)](https://github.com/sshaw/column_namespace/actions/workflows/ci.yml)
 
 Group columns on your Active Record model under a "namespace method".
 

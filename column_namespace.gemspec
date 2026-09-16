@@ -27,7 +27,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "class2", "~> 0.7"
-  spec.add_dependency "activerecord", ">= 4.2", "< 9"
+  spec.add_dependency "activerecord", ">= 5.2", "< 9"
+
+  spec.required_ruby_version = ">= 2.7"
 
   spec.add_development_dependency "appraisal"
   spec.add_development_dependency "bundler"
